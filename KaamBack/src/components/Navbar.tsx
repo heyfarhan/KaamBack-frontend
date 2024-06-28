@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import logo from '../assets/logo.jpg';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import Signup from './Signup';
 
-const Navbar = () => {
+const Navbar = ({bgColor}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showModal,setShowModal]=useState(false)
 
   const navLinks = [
     { path: "/", label: "Home" },
@@ -12,9 +14,10 @@ const Navbar = () => {
     { path: "/ourteam", label: "Our Team" },
     { path: "/signin", label: "Sign in" },
   ];
+ 
 
   return (
-    <nav className="flex items-center justify-between bg-custom-100 px-6 lg:px-24 lg:py-6 py-4">
+    <nav className={`flex items-center justify-between ${bgColor} px-6 lg:px-24 lg:py-6 py-4`}>
       <div className="flex items-center">
         <img src={logo} alt="Logo" className="w-[150px] lg:w-[200px] h-auto" />
       </div>
@@ -30,13 +33,14 @@ const Navbar = () => {
               <p className='text-white text-xl font-ptSans py-2 lg:py-0 px-6'>{link.label}</p>
             </Link>
           ))}
-          <Link to="/signup" onClick={() => setIsOpen(false)}>
+           <button onClick={() => { setShowModal(true); setIsOpen(false); }}>
             <div className='w-[90px] border-2 border-white rounded-lg px-2 py-1 mt-2 lg:mt-0 mb-4 lg:mb-0 lg:ml-[24px]'>
               <p className='text-white text-xl font-ptSans'>Sign up</p>
             </div>
-          </Link>
+          </button>
         </div>
       </div>
+      {showModal && <Signup onClose={() => setShowModal(false)} />}
     </nav>
   )
 }
