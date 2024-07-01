@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Apple from '../assets/apple-logo.png';
 import Facebook from "../assets/facebook.png";
 import Gmail from "../assets/mail.png";
 import Google from "../assets/google.png";
+import Email from './Email';
 const style={
   main:`fixed inset-0 flex items-center justify-center z-20 px-4`,
   box: `bg-[#BFE0FF] text-white p-14 rounded-xl z-30 w-full max-w-xl`,
@@ -14,41 +15,53 @@ const style={
   checkout:`flex justify-center items-center w-full text-gray-900 text-xs mb-2`
 
 }
-const continueWith = [
-  {
-    text:'Google',
-    logo:Google,
-    alt:"Google icon"
-  },
-  {
-    text:'Email',
-    logo:Gmail,
-    alt:"Gmail icon"
-  },
-  
-]
-const companies = [
-  {
-    text:"Apple",
-    logo:Apple,
-    alt:"Apple icon",
-  },
-  {
-    text:"Facebook",
-    logo:Facebook,
-    alt:"Facebook icon"
-  }
-]
 
-const Signup = ({ onClose }) => {
+
+const Signup = ({onClose}) => {
+
+    const [showEmailForm, setShowEmailForm] = useState(false);
+  
+    const handleEmailClick = () => {
+      setShowEmailForm(true);
+    };
+
+    const continueWith = [
+      {
+        text:'Google',
+        logo:Google,
+        alt:"Google icon"
+      },
+      {
+        text:'Email',
+        logo:Gmail,
+        alt:"Gmail icon",
+        onclick:()=>handleEmailClick()
+    
+      },
+      
+    ]
+    const companies = [
+      {
+        text:"Apple",
+        logo:Apple,
+        alt:"Apple icon",
+      },
+      {
+        text:"Facebook",
+        logo:Facebook,
+        alt:"Facebook icon"
+      }
+    ]
   return (
     <div className={style.main}>
       <div className="fixed inset-0 bg-black opacity-50" onClick={onClose}></div>
       <div className={style.box}>
+        {!showEmailForm?(
+          <>
         <h2 className="text-center text-2xl font-bold text-black mb-4">Create Your Kaamback Account</h2>
         <div className='w-[90%] mx-auto'>
           {continueWith.map((item,index)=>(
-            <button key={index} className={style.button}>
+            <button key={index} onClick={item.onclick} className={style.button}>
             <img src={item.logo} alt="Google Logo" className={style.icon} />
             <span className={style.text} >Continue with {item.text}</span>
           </button>
@@ -77,11 +90,15 @@ const Signup = ({ onClose }) => {
             <span className="text-xs text-black">
               Are you an existing user? <a href="" className="text-[#1F82E8] underline">Sign in</a>
             </span>
-          </div>
-      </div>
+            </div>
+            </div>
+          </>
+        ) : (
+          <Email onBack={() => setShowEmailForm(false)} />
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default Signup;
