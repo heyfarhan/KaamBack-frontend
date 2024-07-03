@@ -8,7 +8,9 @@ const style = {
   input: `w-full px-3 py-2 border border-black rounded-lg bg-[#BFE0FF] placeholder-[#838383] text-black` // updated styles for input
 };
 
-const CreateProfile = ({ onBack }) => {
+
+
+const CreateProfile = () => {
   const[showModal,setShowModal]=useState(false);
   const handleButton=()=>{
       setShowModal(true);
