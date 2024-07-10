@@ -1,5 +1,6 @@
 import reviews from '../data/reviewData.json'
 import { IoIosStar } from "react-icons/io";
+import profile from '../assets/profile.png'
 
 // @ts-ignore
 import { Splide, SplideSlide } from '@splidejs/react-splide';// Default theme
@@ -49,7 +50,7 @@ const Testimonial = () => {
                 {reviews.map((review, index) => (
                     <SplideSlide key={index}>
                         <div className="flex flex-row items-center drop-shadow-xl rounded-lg lg:px-4 py-4 overflow-visible bg-custom-100 lg:h-[420px] lg:mt-20">
-                            <img src={review.image} className=" hidden lg:block mb-[80px] w-[50%]" alt={review.name} />
+                            <img src={profile} className=" hidden lg:block mb-[80px] w-[50%]" alt={review.name} />
                             <div className="flex flex-col lg:pl-6 lg:pr-16 px-5">
                                 <p className="text-2xl text-white font-semibold">{review.name}</p>
                                 <div className="my-2 flex flex-row gap-x-1">
