@@ -3,22 +3,20 @@ import { BrowserRouter as Router, Route, Navigate, Routes, Link } from "react-ro
 import { lazy, Suspense } from "react"
 
 const Home = lazy(() => import('./pages/Home'))
+const OurTeam = lazy(() => import('./pages/OurTeam'))
 
-const Navbar = lazy(() => import('./components/Navbar'))
 const Loader = lazy(() => import('./components/Loader'))
-const Footer = lazy(() => import('./components/Footer'))
 
 function App() {
 
   return (
     <Router>
-      <Navbar />
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/ourteam" element={<OurTeam />} />
         </Routes>
       </Suspense>
-      <Footer />
     </Router>
   )
 }
