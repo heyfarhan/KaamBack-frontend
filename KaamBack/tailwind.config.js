@@ -6,18 +6,6 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        custom: {
-          100: "#041893",
-          200: "#FDD513",
-          300: "#1F82E8",
-          400: "#D9D9D9",
-          500: "#181B38",
-          600: "#3F4358",
-          700: "#F4F6FE",
-          800: "#4351E8",
-        },
-      },
       fontFamily: {
         'ptSans': ["PT Sans", "sans-serif"],
       },

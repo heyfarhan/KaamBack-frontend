@@ -36,11 +36,11 @@ const Home = () => {
               <h1 className="text-2xl lg:text-4xl font-semibold text-white text-center">
                 Empowering your next project :
               </h1>
-              <h1 className="text-2xl lg:text-4xl font-semibold text-custom-200 italic mt-4 text-center">
+              <h1 className="text-2xl lg:text-4xl font-semibold text-[#FDD513] italic mt-4 text-center">
                 Connect &nbsp; Collaborate &nbsp; Succeed
               </h1>
               <div className="bg-white w-11/12 lg:w-[530px] h-[50px] rounded-full mt-6 flex justify-between">
-                <p className="self-center lg:text-md text-s font-semibold italic ml-8 text-custom-300">
+                <p className="self-center lg:text-md text-s font-semibold italic ml-8 text-[#1F82E8]">
                   So.. What you want to be done today..
                 </p>
                 <div className="bg-blue-300 w-[100px] rounded-full flex justify-center items-center">
@@ -55,7 +55,7 @@ const Home = () => {
         </div>
 
         <div className="bg-white px-6 lg:px-24 py-14">
-          <h1 className="text-3xl font-bold text-center lg:text-left text-custom-500">What You Seek, We Deliver</h1>
+          <h1 className="text-3xl font-bold text-center lg:text-left text-[#181B38]">What You Seek, We Deliver</h1>
           <div className="flex flex-wrap justify-center gap-x-[30px] lg:gap-x-[120px] gap-y-[40px] lg:gap-y-[80px] mt-[40px] lg:mt-[50px]">
             {categories.map((category, idx) => (
               <div key={idx} className="relative bg-blue-100 w-[250px] lg:w-[300px] h-[230px] rounded-2xl flex flex-col items-center justify-center transition-transform duration-300 transform hover:scale-105 hover:z-10 cursor-pointer">
@@ -69,7 +69,7 @@ const Home = () => {
         </div>
 
         <div className="bg-white px-6 lg:px-24 py-14">
-          <h1 className="text-3xl font-bold text-center lg:text-left text-custom-500">About Us</h1>
+          <h1 className="text-3xl font-bold text-center lg:text-left text-[#181B38]">About Us</h1>
           <div className='flex lg:flex-row mt-[50px] flex-col'>
             <div className='lg:w-1/2 w-full'>
               <p className='font-medium'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas diam in arcu cursus euismod quis. Sed nisi lacus sed viverra tellus. Imperdiet proin fermentum leo vel orci porta non pulvinar neque. Tellus orci ac auctor augue mauris augue. Vitae tortor condimentum lacinia quis vel eros donec ac odio. Aliquam malesuada bibendum arcu vitae elementum. Nunc mattis enim ut tellus elementum sagittis vitae. Orci porta non pulvinar neque laoreet. Montes nascetur ridiculus mus mauris vitae ultricies. Laoreet id donec ultrices tincidunt arcu non sodales. Gravida arcu ac tortor dignissim convallis.
@@ -82,7 +82,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className='bg-custom-100 mx-6 lg:mx-24 rounded-xl flex flex-col mt-10 gap-y-16'>
+        <div className='bg-[#041893] mx-6 lg:mx-24 rounded-xl flex flex-col mt-10 gap-y-16'>
           <div className='flex flex-col lg:flex-row px-6 lg:px-24 items-center mt-10'>
             <div className='w-full lg:w-1/2 mb-6 lg:mb-0'>
               <p className='text-3xl text-white font-semibold font-ptSans tracking-wide'>Adapt. Grow. Scale. <br />Your Workforce Solution.</p>
@@ -105,7 +105,7 @@ const Home = () => {
             <div className='w-full lg:w-1/2 mb-6 lg:mb-0'>
               <p className='text-3xl text-white font-semibold font-ptSans tracking-wide'>Swift Onboarding. Precise Execution.<br />Project Ignition.</p>
               <p className='mt-2 text-md text-white font-ptSans font-thin tracking-wider'>Ignite projects with speed and precision! Quickly onboard professionals to ensure timely kick-offs and efficient execution, propelling your ventures to success.</p>
-              <button className='px-10 py-2 bg-white text-custom-800 mt-4 rounded-md font-semibold' onClick={() => navigation('/ourteam')}>Discover Now</button>
+              <button className='px-10 py-2 bg-white text-[#4351E8] mt-4 rounded-md font-semibold' onClick={() => navigation('/ourteam')}>Discover Now</button>
             </div>
             <div className='w-full lg:w-1/2 flex justify-center lg:justify-end'>
               <img src={img3} className='h-[250px] lg:h-[350px] w-[300px] lg:w-[400px]' />

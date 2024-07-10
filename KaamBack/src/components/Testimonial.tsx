@@ -45,11 +45,11 @@ const Testimonial = () => {
 
     return (
         <div className='py-16 flex flex-col items-center w-full'>
-            <h1 className='text-3xl text-custom-500 font-bold'>A Word from Pioneers</h1>
+            <h1 className='text-3xl text-[#181B38] font-bold'>A Word from Pioneers</h1>
             <Splide options={splideOptions}>
                 {reviews.map((review, index) => (
                     <SplideSlide key={index}>
-                        <div className="flex flex-row items-center drop-shadow-xl rounded-lg lg:px-4 py-4 overflow-visible bg-custom-100 lg:h-[420px] lg:mt-20">
+                        <div className="flex flex-row items-center drop-shadow-xl rounded-lg lg:px-4 py-4 overflow-visible bg-[#041893] lg:h-[420px] lg:mt-20">
                             <img src={profile} className=" hidden lg:block mb-[80px] w-[50%]" alt={review.name} />
                             <div className="flex flex-col lg:pl-6 lg:pr-16 px-5">
                                 <p className="text-2xl text-white font-semibold">{review.name}</p>

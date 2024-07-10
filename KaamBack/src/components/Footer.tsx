@@ -30,19 +30,19 @@ const Footer = () => {
                     <div className="flex flex-col gap-y-3">
                         <div className="flex items-center">
                             <FaFacebook size={30} color="#0865fe" />
-                            <a className="ml-2 text-lg text-custom-100 font-semibold underline hover:cursor-pointer">Facebook</a>
+                            <a className="ml-2 text-lg text-[#041893] font-semibold underline hover:cursor-pointer">Facebook</a>
                         </div>
                         <div className="flex items-center">
                             <FaInstagram size={30} />
-                            <a className="ml-2 text-lg text-custom-100 font-semibold underline hover:cursor-pointer">Instagram</a>
+                            <a className="ml-2 text-lg text-[#041893] font-semibold underline hover:cursor-pointer">Instagram</a>
                         </div>
                         <div className="flex items-center">
                             <FaXTwitter size={30} />
-                            <a className="ml-2 text-lg text-custom-100 font-semibold underline hover:cursor-pointer">Twitter</a>
+                            <a className="ml-2 text-lg text-[#041893] font-semibold underline hover:cursor-pointer">Twitter</a>
                         </div>
                         <div className="flex items-center">
                             <FaLinkedin size={30} color="#0865fe" />
-                            <a className="ml-2 text-lg text-custom-100 font-semibold underline hover:cursor-pointer">LinkedIn</a>
+                            <a className="ml-2 text-lg text-[#041893] font-semibold underline hover:cursor-pointer">LinkedIn</a>
                         </div>
                     </div>
                 </div>
