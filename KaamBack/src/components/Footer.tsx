@@ -23,6 +23,7 @@ const footerCols = [
 
 const Footer = () => {
     return (
+<<<<<<< HEAD
         <footer className="flex flex-col items-center p-6 lg:px-24 lg:pb-20">
             <div className="flex flex-col lg:flex-row justify-between w-full">
                 <div className="flex flex-col lg:items-start mb-6 lg:mb-0 lg:left-[-10px]">
@@ -46,6 +47,11 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+=======
+        <footer>
+            <div className="w-full h-[2px] bg-[#ffdf3]"></div>
+            <div className="flex flex-col lg:flex-row justify-between px-6 lg:px-28 pt-12 lg:pt-24">
+>>>>>>> 5a70e72a70dcc1476682319e18b8bde508de0062
                 {footerCols.map((section, index) => (
                     <div className="flex flex-col mb-6 lg:mb-0" key={index}>
                         <h1 className="text-xl lg:text-2xl font-semibold mb-4">{section.title}</h1>
