@@ -93,7 +93,7 @@ const OurTeam = () => {
                     <Splide options={splideOptions}>
                         {groupedTeamMembers.map((group, index) => (
                             <SplideSlide key={index}>
-                                <div className='flex justify-center gap-x-40 flex-wrap my-10'>
+                                <div className='flex justify-center gap-x-20 flex-wrap my-10 gap-y-10'>
                                     {group.map((member, idx) => (
                                         <ProfileCard
                                             key={idx}

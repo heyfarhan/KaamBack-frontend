@@ -23,11 +23,10 @@ const footerCols = [
 
 const Footer = () => {
     return (
-<<<<<<< HEAD
         <footer className="flex flex-col items-center p-6 lg:px-24 lg:pb-20">
             <div className="flex flex-col lg:flex-row justify-between w-full">
                 <div className="flex flex-col lg:items-start mb-6 lg:mb-0 lg:left-[-10px]">
-                    <img src={logo} alt="logo" className="h-12 mb-4 ml-[-5px]" />
+                    <img src={logo} alt="logo" className="w-[150px] lg:w-[200px] h-auto mb-5" />
                     <div className="flex flex-col gap-y-3">
                         <div className="flex items-center">
                             <FaFacebook size={30} color="#0865fe" />
@@ -47,11 +46,6 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-=======
-        <footer>
-            <div className="w-full h-[2px] bg-[#ffdf3]"></div>
-            <div className="flex flex-col lg:flex-row justify-between px-6 lg:px-28 pt-12 lg:pt-24">
->>>>>>> 5a70e72a70dcc1476682319e18b8bde508de0062
                 {footerCols.map((section, index) => (
                     <div className="flex flex-col mb-6 lg:mb-0" key={index}>
                         <h1 className="text-xl lg:text-2xl font-semibold mb-4">{section.title}</h1>
