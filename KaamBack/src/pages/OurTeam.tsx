@@ -15,7 +15,13 @@ import '@splidejs/react-splide/css/sea-green';
 // or only core styles
 import '@splidejs/react-splide/css/core';
 
-const ProfileCard = ({ name, role, image }) => (
+type ProfileCardProps = {
+    name: string;
+    role: string;
+    image: string;
+};
+
+const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, image }) => (
     <div className='group flex flex-col items-center shadow-xl pb-6 rounded-xl bg-white hover:bg-custom-100 hover:cursor-pointer transition-all duration-200 hover:text-white'>
         <img src={image} alt='' className='w-[250px] h-[250px] rounded-tl-xl rounded-tr-xl rounded-b-none object-cover' />
         <h2 className='text-xl font-bold text-custom-500 mt-6 max-w-[180px] text-center group-hover:text-white'>{name}</h2>
