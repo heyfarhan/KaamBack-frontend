@@ -45,7 +45,7 @@ const Navbar = () => {
       <div className="flex items-center">
         <img src={navBackground ? Kaamback : logo} alt="Logo" className="w-[150px] lg:w-[200px] h-auto" />
       </div>
-      <div className={`lg:flex lg:flex-row lg:items-center lg:gap-x-[60px] ${isOpen ? 'max-h-screen' : 'max-h-0'} overflow-hidden lg:max-h-none transition-max-height duration-300 ease-in-out absolute lg:relative top-16 lg:top-auto left-0 w-full lg:w-auto ${navBackground ? 'bg-[#FFFDF3]' : 'bg-[#041893]'} lg:bg-transparent lg:static z-10`}>
+      <div className={`lg:flex lg:flex-row lg:items-center lg:gap-x-[60px] ${isOpen ? 'max-h-screen' : 'max-h-0'} overflow-hidden lg:max-h-none transition-max-height duration-300 ease-in-out absolute lg:relative top-16 lg:top-auto left-0 w-full lg:w-auto ${navBackground ? 'bg-white' : 'bg-[#041893]'} lg:bg-transparent lg:static z-10`}>
         <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-end">
           {navLinks.map(link => (
             <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)}>
