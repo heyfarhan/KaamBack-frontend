@@ -22,7 +22,7 @@ const footerCols = [
 const Footer = () => {
     return (
         <footer>
-            <div className="w-full h-[2px] bg-gray-300"></div>
+            <div className="w-full h-[2px] bg-[#ffdf3]"></div>
             <div className="flex flex-col lg:flex-row justify-between px-6 lg:px-28 pt-12 lg:pt-24">
                 {footerCols.map((section, index) => (
                     <div className="flex flex-col mb-10 lg:mb-0" key={index}>
