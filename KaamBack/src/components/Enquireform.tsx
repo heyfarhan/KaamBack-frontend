@@ -1,5 +1,3 @@
-import React from 'react';
-
 const style = {
   modal: `fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50`,
   modalContent: `bg-blue-200 rounded-lg shadow-lg p-8 w-[90%] md:w-[50%] relative`,
@@ -9,9 +7,11 @@ const style = {
   button: `w-full py-2 bg-blue-300 text-black rounded-lg`
 };
 
-const EnquireForm = ({ onClose }) => {
+type EnquireFormProps = {
+  onClose: () => void;
+};
 
-
+const EnquireForm: React.FC<EnquireFormProps> = ({ onClose }) => {
   return (
     <div className={style.modal}>
       <div className={style.modalContent}>
@@ -20,7 +20,7 @@ const EnquireForm = ({ onClose }) => {
         <form action="https://getform.io/f/axojjmrb" method='POST'>
           <input className={style.input} type="text" name="name" placeholder="Full Name" required />
           <input className={style.input} type="email" name="email" placeholder="Email" required />
-          <textarea className={style.textarea} name="message" placeholder="Your Message"  required />
+          <textarea className={style.textarea} name="message" placeholder="Your Message" required />
           <button className={style.button} type="submit">Submit</button>
         </form>
       </div>
