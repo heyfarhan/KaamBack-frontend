@@ -23,7 +23,7 @@ const footerCols = [
 
 const Footer = () => {
     return (
-        <footer className="flex flex-col items-center p-6 lg:px-24 lg:pb-20">
+        <footer className="flex flex-col items-center p-6 lg:px-24 lg:pb-20 bg-white">
             <div className="flex flex-col lg:flex-row justify-between w-full">
                 <div className="flex flex-col lg:items-start mb-6 lg:mb-0 lg:left-[-10px]">
                     <img src={logo} alt="logo" className="w-[150px] lg:w-[200px] h-auto mb-5" />

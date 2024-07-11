@@ -37,7 +37,7 @@ const OurTeam = () => {
     const splideOptions: any = {
         rewind: true,
         autoplay: true,
-        interval: 4000,
+        interval: 3000,
         width: '100%',
         gap: '1rem',
         padding: { left: '5%', right: '5%' },

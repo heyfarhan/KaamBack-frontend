@@ -20,7 +20,7 @@ const Testimonial = () => {
     const splideOptions: any = {
         rewind: true,
         autoplay: true,
-        interval: 4000,
+        interval: 3000,
         width: '80%',
         gap: '10rem',
         padding: { left: '10%', right: '10%' },

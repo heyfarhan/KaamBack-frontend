@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className='flex flex-col items-center'>
+      <div className='flex flex-col items-center bg-white'>
         <div className="flex flex-col lg:flex-row lg:py-8 bg-homeBg w-full">
           <div className="w-full lg:w-1/2">
             <section className="pt-40 pb-20 lg:py-64 flex flex-col items-center">
