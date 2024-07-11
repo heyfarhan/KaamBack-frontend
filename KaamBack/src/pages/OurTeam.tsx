@@ -21,9 +21,9 @@ type ProfileCardProps = {
 };
 
 const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, image }) => (
-    <div className='group flex flex-col items-center shadow-xl pb-6 rounded-xl bg-white hover:bg-[#041893] hover:cursor-pointer transition-all duration-200 hover:text-white'>
-        <img src={image} alt='' className='w-[250px] h-[250px] rounded-tl-xl rounded-tr-xl rounded-b-none object-cover' />
-        <h2 className='text-xl font-bold text-[#181B38] mt-6 max-w-[180px] text-center group-hover:text-white'>{name}</h2>
+    <div className='group flex flex-col items-center shadow-xl lg:pb-6 pb-2 rounded-xl bg-white hover:bg-[#041893] hover:cursor-pointer transition-all duration-200 hover:text-white'>
+        <img src={image} alt='' className='lg:w-[250px] lg:h-[250px] w-[200px] h-[200px] rounded-tl-xl rounded-tr-xl rounded-b-none object-cover' />
+        <h2 className='text-xl font-bold text-[#181B38] lg:mt-6 mt-2 max-w-[180px] text-center group-hover:text-white'>{name}</h2>
         <h2 className='font-bold text-[12px] text-[#181B38] group-hover:text-white'>{role}</h2>
         <div className='flex flex-row items-center gap-x-4 mt-4'>
             <FaLinkedinIn size={20} className='hover:cursor-pointer' />
@@ -73,7 +73,6 @@ const OurTeam = () => {
         { name: 'Aryaman Sngh', role: 'UI/UX Designer', image: profile },
         { name: 'Aryaman ingh', role: 'UI/UX Designer', image: profile },
         { name: 'Aryaman Singh', role: 'UI/UX Designer', image: profile },
-        { name: 'Aryaman Sing', role: 'UI/UX Designer', image: profile },
     ];
 
     const groupedTeamMembers = [];
@@ -84,7 +83,7 @@ const OurTeam = () => {
     return (
         <>
             <Navbar />
-            <div className="bg-blue-100 px-4 lg:px-24 py-12 lg:mt-[100px] mt-[60px]">
+            <div className="bg-blue-100 px-4 lg:px-24 lg:py-12 py-8 lg:mt-[100px] mt-[60px]">
                 <div className="flex flex-row h-24 items-center">
                     <div className="w-[6px] bg-[#181B38] h-20 mr-4 hidden lg:block"></div>
                     <h1 className="text-4xl md:text-5xl font-bold text-[#181B38]">OUR TEAM
@@ -95,7 +94,7 @@ const OurTeam = () => {
                     <Splide options={splideOptions}>
                         {groupedTeamMembers.map((group, index) => (
                             <SplideSlide key={index}>
-                                <div className='flex justify-center gap-x-20 flex-wrap my-10 gap-y-10'>
+                                <div className='flex justify-center gap-x-20 flex-wrap mb-10 gap-y-10'>
                                     {group.map((member, idx) => (
                                         <ProfileCard
                                             key={idx}
