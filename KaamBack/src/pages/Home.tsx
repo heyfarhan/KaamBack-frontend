@@ -29,7 +29,7 @@ const Home = () => {
       <div className='flex flex-col items-center bg-white'>
         <div className="flex flex-col lg:flex-row lg:py-8 bg-homeBg w-full">
           <div className="w-full lg:w-1/2">
-            <section className="pt-40 pb-20 lg:py-64 flex flex-col items-center">
+            <section className="pt-36 pb-16 lg:py-64 flex flex-col items-center">
               <h1 className="text-2xl lg:text-4xl font-semibold text-white text-center">
                 Empowering your next project :
               </h1>
@@ -37,7 +37,7 @@ const Home = () => {
                 Connect &nbsp; Collaborate &nbsp; Succeed
               </h1>
               <div className="bg-white w-11/12 lg:w-[530px] lg:h-[50px] h-[40px] rounded-full mt-6 flex justify-between">
-                <p className="self-center lg:text-md text-[15px] font-semibold italic lg:ml-8 ml-4 text-[#1F82E8]">
+                <p className="self-center lg:text-md text-[12px] font-semibold italic lg:ml-8 ml-4 text-[#1F82E8]">
                   So.. What you want to be done today..
                 </p>
                 <div className="bg-blue-300 lg:w-[100px] w-[80px] rounded-full flex justify-center items-center">

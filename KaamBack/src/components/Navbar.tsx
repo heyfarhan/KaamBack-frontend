@@ -37,12 +37,10 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 w-full flex items-center lg:justify-between px-6 lg:px-24 lg:py-6 py-2 transition-all duration-300 ${navBackground ? 'bg-white border-b-[3px] shadow-xl' : 'bg-[#041893] border-none'} z-50`}>
-      <div className="lg:hidden mr-6">
-        <button onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <FaTimes size={25} className={`${navBackground ? 'text-[#041893]' : 'text-[#fafcfd]'}`} /> : <FaBars size={25} className={`${navBackground ? 'text-[#041893]' : 'text-[#fafcfd]'}`} />}
+      <div className="flex items-center lg:justify-between w-full lg:w-auto">
+        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden mr-4">
+          {isOpen ? <FaTimes size={28} className={`${navBackground ? 'text-[#041893]' : 'text-[#fafcfd]'}`} /> : <FaBars size={28} className={`${navBackground ? 'text-[#041893]' : 'text-[#fafcfd]'}`} />}
         </button>
-      </div>
-      <div className="flex items-center">
         <img src={navBackground ? Kaamback : logo} alt="Logo" className="w-[150px] lg:w-[200px] h-auto" />
       </div>
       <div className={`lg:flex lg:flex-row lg:items-center lg:gap-x-[60px] ${isOpen ? 'max-h-screen' : 'max-h-0'} overflow-hidden lg:max-h-none transition-max-height duration-300 ease-in-out absolute lg:relative top-14 lg:top-auto left-0 w-full lg:w-auto ${navBackground ? 'bg-white' : 'bg-[#041893]'} lg:bg-transparent lg:static z-10`}>
