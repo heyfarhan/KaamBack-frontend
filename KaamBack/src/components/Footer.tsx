@@ -1,5 +1,6 @@
 import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 import logo from '../assets/kaamback.png';
 
 const footerCols = [
@@ -13,7 +14,13 @@ const footerCols = [
     },
     {
         title: "About",
-        items: ["About KaamBack", "Careers", "Press and notes", "Privacy Policy", "Terms of Services"]
+        items: [
+            { label: "About KaamBack", path: "/#about" },
+            { label: "Careers", path: "/career" },
+            { label: "Press and notes" },
+            { label: "Privacy Policy" },
+            { label: "Terms of Services" }
+        ]
     },
     {
         title: "Support",
@@ -22,6 +29,22 @@ const footerCols = [
 ];
 
 const Footer = () => {
+    const navigate = useNavigate();
+
+    const handleNavigation = (path) => {
+        if (path === "/#about") {
+            navigate("/", { replace: true });
+            setTimeout(() => {
+                const aboutSection = document.getElementById("about");
+                if (aboutSection) {
+                    aboutSection.scrollIntoView({ behavior: "smooth" });
+                }
+            }, 100);
+        } else {
+            navigate(path);
+        }
+    };
+
     return (
         <footer className="flex flex-col items-center p-6 lg:px-24 lg:pb-20 bg-white">
             <div className="flex flex-col lg:flex-row justify-between w-full">
@@ -34,7 +57,7 @@ const Footer = () => {
                         </div>
                         <div className="flex items-center">
                             <FaInstagram size={30} />
-                            <a className="ml-2 text-lg text-[#041893] font-semibold underline hover:cursor-pointer">Instagram</a>
+                            <a className="ml-2 text-lg text-[#041893] font-semibold underline hover:cursor-pointer" href="https://www.instagram.com/kaamback.india">Instagram</a>
                         </div>
                         <div className="flex items-center">
                             <FaXTwitter size={30} />
@@ -42,7 +65,7 @@ const Footer = () => {
                         </div>
                         <div className="flex items-center">
                             <FaLinkedin size={30} color="#0865fe" />
-                            <a className="ml-2 text-lg text-[#041893] font-semibold underline hover:cursor-pointer">LinkedIn</a>
+                            <a className="ml-2 text-lg text-[#041893] font-semibold underline hover:cursor-pointer" href="https://www.linkedin.com/company/kaamback">LinkedIn</a>
                         </div>
                     </div>
                 </div>
@@ -50,7 +73,17 @@ const Footer = () => {
                     <div className="flex flex-col mb-6 lg:mb-0" key={index}>
                         <h1 className="text-xl lg:text-2xl font-semibold mb-4">{section.title}</h1>
                         {section.items.map((item, idx) => (
-                            <p className="text-md lg:text-lg my-1 font-medium" key={idx}>{item}</p>
+                            typeof item === 'string' ? (
+                                <p className="text-md lg:text-lg my-1 font-medium" key={idx}>{item}</p>
+                            ) : (
+                                <p
+                                    className="text-md lg:text-lg my-1 font-medium cursor-pointer"
+                                    onClick={() => handleNavigation(item.path)}
+                                    key={idx}
+                                >
+                                    {item.label}
+                                </p>
+                            )
                         ))}
                     </div>
                 ))}

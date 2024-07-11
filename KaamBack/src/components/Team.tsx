@@ -30,7 +30,7 @@ const Team = () => {
   };
 
   return (
-    <div className="mx-auto flex justify-center lg:mt-36 mt-28 lg:mb-16 mb-10 px-4">
+    <div className="mx-auto flex justify-center lg:mt-36 mt-24 lg:mb-16 mb-10 px-4">
       <div className="bg-blue-200 w-full lg:w-[75%] py-10 rounded-2xl overflow-x-auto">
         <div className="px-7">
           <h1 className="font-bold text-left mb-6 text-2xl">Join the Team</h1>
