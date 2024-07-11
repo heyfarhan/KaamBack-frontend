@@ -74,10 +74,10 @@ const Footer = () => {
                         <h1 className="text-xl lg:text-2xl font-semibold mb-4">{section.title}</h1>
                         {section.items.map((item, idx) => (
                             typeof item === 'string' ? (
-                                <p className="text-md lg:text-lg my-1 font-medium" key={idx}>{item}</p>
+                                <p className="text-md lg:text-lg my-1 font-medium hover:cursor-pointer" key={idx}>{item}</p>
                             ) : (
                                 <p
-                                    className="text-md lg:text-lg my-1 font-medium cursor-pointer"
+                                    className="text-md lg:text-lg my-1 font-medium hover:cursor-pointer"
                                     onClick={() => handleNavigation(item.path)}
                                     key={idx}
                                 >
