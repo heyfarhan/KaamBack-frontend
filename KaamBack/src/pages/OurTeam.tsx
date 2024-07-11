@@ -1,7 +1,6 @@
 import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import profile from '../assets/profile.jpg';
-import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 // @ts-ignore
@@ -77,9 +76,6 @@ const OurTeam = () => {
         { name: 'Aryaman Sing', role: 'UI/UX Designer', image: profile },
     ];
 
-    const navigation = useNavigate();
-
-    // Group team members into arrays of up to 3 members each
     const groupedTeamMembers = [];
     for (let i = 0; i < teamMembers.length; i += 3) {
         groupedTeamMembers.push(teamMembers.slice(i, i + 3));
@@ -91,7 +87,7 @@ const OurTeam = () => {
             <div className="bg-blue-100 px-4 lg:px-24 py-12 lg:mt-[100px] mt-[60px]">
                 <div className="flex flex-row h-24 items-center">
                     <div className="w-[6px] bg-[#181B38] h-20 mr-4 hidden lg:block"></div>
-                    <h1 className="text-4xl md:text-5xl font-bold text-[#181B38]" onClick={() => navigation(-1)}>OUR TEAM
+                    <h1 className="text-4xl md:text-5xl font-bold text-[#181B38]">OUR TEAM
                         <span className="block text-sm md:text-lg tracking-wider mt-2 ml-1">Meet our team members</span>
                     </h1>
                 </div>

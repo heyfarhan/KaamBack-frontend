@@ -9,7 +9,6 @@ import img2 from '../assets/img6.png'
 import img3 from '../assets/img8.png'
 import homeImg from '../assets/homeImg.png'
 import aboutImg from '../assets/aboutImg.png'
-import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Testimonial from '../components/Testimonial';
@@ -24,33 +23,31 @@ const categories = [
 
 const Home = () => {
 
-  const navigation = useNavigate()
-
   return (
     <>
       <Navbar />
       <div className='flex flex-col items-center'>
         <div className="flex flex-col lg:flex-row lg:py-8 bg-homeBg w-full">
           <div className="w-full lg:w-1/2">
-            <section className="py-40 lg:py-64 flex flex-col items-center">
+            <section className="pt-40 pb-20 lg:py-64 flex flex-col items-center">
               <h1 className="text-2xl lg:text-4xl font-semibold text-white text-center">
                 Empowering your next project :
               </h1>
               <h1 className="text-2xl lg:text-4xl font-semibold text-[#FDD513] italic mt-4 text-center">
                 Connect &nbsp; Collaborate &nbsp; Succeed
               </h1>
-              <div className="bg-white w-11/12 lg:w-[530px] h-[50px] rounded-full mt-6 flex justify-between">
-                <p className="self-center lg:text-md text-s font-semibold italic ml-8 text-[#1F82E8]">
+              <div className="bg-white w-11/12 lg:w-[530px] lg:h-[50px] h-[40px] rounded-full mt-6 flex justify-between">
+                <p className="self-center lg:text-md text-[15px] font-semibold italic lg:ml-8 ml-4 text-[#1F82E8]">
                   So.. What you want to be done today..
                 </p>
-                <div className="bg-blue-300 w-[100px] rounded-full flex justify-center items-center">
-                  <img src={search} className="h-[32px] w-[32px]" />
+                <div className="bg-blue-300 lg:w-[100px] w-[80px] rounded-full flex justify-center items-center">
+                  <img src={search} className="lg:h-[32px] lg:w-[32px] w-[28px] h-[28px]" />
                 </div>
               </div>
             </section>
           </div>
           <div className="w-full lg:w-1/2 flex justify-center items-center">
-            <img src={homeImg} alt='homeImg' className="w-full lg:w-auto" />
+            <img src={homeImg} alt='homeImg' className="lg:w-auto w-[80%] py-10" />
           </div>
         </div>
 
@@ -68,7 +65,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="bg-white px-6 lg:px-24 py-14">
+        <div className="bg-white px-6 lg:px-24 py-12">
           <h1 className="text-3xl font-bold text-center lg:text-left text-[#181B38]">About Us</h1>
           <div className='flex lg:flex-row mt-[50px] flex-col'>
             <div className='lg:w-1/2 w-full'>
@@ -76,25 +73,25 @@ const Home = () => {
                 <br></br><br></br>
                 Nibh sed pulvinar proin gravida hendrerit lectus a. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Orci sagittis eu volutpat odio facilisis mauris sit. Purus in mollis nunc sed. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Tempus imperdiet nulla malesuada pellentesque elit eget gravida. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor. Pellentesque dignissim enim sit amet venenatis urna cursus eget. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Id leo in vitae turpis massa sed. Sagittis eu volutpat odio facilisis mauris sit.</p>
             </div>
-            <div className='lg:w-1/2 flex justify-end w-full mt-10'>
-              <img src={aboutImg} className='w-[450px] h-[400px]' />
+            <div className='lg:w-1/2 flex lg:justify-end w-full lg:mt-0 mt-10 justify-center'>
+              <img src={aboutImg} className='w-[80%] h-[90%]' />
             </div>
           </div>
         </div>
 
-        <div className='bg-[#041893] mx-6 lg:mx-24 rounded-xl flex flex-col mt-10 gap-y-16'>
+        <div className='bg-[#041893] mx-6 lg:mx-24 rounded-xl flex flex-col gap-y-16'>
           <div className='flex flex-col lg:flex-row px-6 lg:px-24 items-center mt-10'>
             <div className='w-full lg:w-1/2 mb-6 lg:mb-0'>
               <p className='text-3xl text-white font-semibold font-ptSans tracking-wide'>Adapt. Grow. Scale. <br />Your Workforce Solution.</p>
               <p className='mt-2 text-md text-white font-ptSans font-thin tracking-wider'>Fuel your growth journey effortlessly! Scale your workforce dynamically to meet project demands and seize new business opportunities.</p>
             </div>
             <div className='w-full lg:w-1/2 flex justify-center lg:justify-end'>
-              <img src={img1} className='h-[250px] lg:h-[350px] w-[300px] lg:w-[400px]' />
+              <img src={img1} className='h-[200px] lg:h-[350px] w-[90%] lg:w-[400px]' />
             </div>
           </div>
           <div className='flex flex-col lg:flex-row px-6 lg:px-24 items-center'>
             <div className='w-full lg:w-1/2 flex justify-center lg:justify-start order-2 lg:order-1 mt-6 lg:mt-0'>
-              <img src={img2} className='h-[250px] lg:h-[350px] w-[300px] lg:w-[400px]' />
+              <img src={img2} className='h-[200px] lg:h-[350px] w-[90%] lg:w-[400px]' />
             </div>
             <div className='w-full lg:w-1/2 order-1 lg:order-2'>
               <p className='text-3xl text-white font-semibold font-ptSans tracking-wide'>Budget Mastery:<br />Efficient. Smart. Contract-Based Excellence.</p>
@@ -105,10 +102,10 @@ const Home = () => {
             <div className='w-full lg:w-1/2 mb-6 lg:mb-0'>
               <p className='text-3xl text-white font-semibold font-ptSans tracking-wide'>Swift Onboarding. Precise Execution.<br />Project Ignition.</p>
               <p className='mt-2 text-md text-white font-ptSans font-thin tracking-wider'>Ignite projects with speed and precision! Quickly onboard professionals to ensure timely kick-offs and efficient execution, propelling your ventures to success.</p>
-              <button className='px-10 py-2 bg-white text-[#4351E8] mt-4 rounded-md font-semibold' onClick={() => navigation('/ourteam')}>Discover Now</button>
+              <button className='px-10 py-2 bg-white text-[#4351E8] mt-4 rounded-md font-semibold'>Discover Now</button>
             </div>
             <div className='w-full lg:w-1/2 flex justify-center lg:justify-end'>
-              <img src={img3} className='h-[250px] lg:h-[350px] w-[300px] lg:w-[400px]' />
+              <img src={img3} className='h-[200px] lg:h-[350px] w-[90%] lg:w-[400px]' />
             </div>
           </div>
         </div>
