@@ -20,6 +20,7 @@ const Team = () => {
     { role: "Role Name", department: "Dept Type", location: "Loc Type", employment: "Emp Type " },
   ];
 
+
   const handleViewRole = () => {
     setShowModal(true);
   };
@@ -61,6 +62,6 @@ const Team = () => {
       {showModal && <EnquireForm onClose={handleCloseModal} />}
     </div>
   );
-};
+
 
 export default Team;

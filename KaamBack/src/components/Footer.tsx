@@ -1,4 +1,6 @@
-import { FaInstagram, FaTelegram, FaRegEnvelope, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import logo from '../assets/kaamback.png';
 
 const footerCols = [
     {
@@ -17,36 +19,47 @@ const footerCols = [
         title: "Support",
         items: ["Help and Support", "Company guide", "Freelancer guide"]
     }
-]
+];
 
 const Footer = () => {
     return (
-        <footer>
-            <div className="w-full h-[2px] bg-[#ffdf3]"></div>
-            <div className="flex flex-col lg:flex-row justify-between px-6 lg:px-28 pt-12 lg:pt-24">
+        <footer className="flex flex-col items-center p-6 lg:px-24 lg:pb-20">
+            <div className="flex flex-col lg:flex-row justify-between w-full">
+                <div className="flex flex-col lg:items-start mb-6 lg:mb-0 lg:left-[-10px]">
+                    <img src={logo} alt="logo" className="w-[150px] lg:w-[200px] h-auto mb-5" />
+                    <div className="flex flex-col gap-y-3">
+                        <div className="flex items-center">
+                            <FaFacebook size={30} color="#0865fe" />
+                            <a className="ml-2 text-lg text-[#041893] font-semibold underline hover:cursor-pointer">Facebook</a>
+                        </div>
+                        <div className="flex items-center">
+                            <FaInstagram size={30} />
+                            <a className="ml-2 text-lg text-[#041893] font-semibold underline hover:cursor-pointer">Instagram</a>
+                        </div>
+                        <div className="flex items-center">
+                            <FaXTwitter size={30} />
+                            <a className="ml-2 text-lg text-[#041893] font-semibold underline hover:cursor-pointer">Twitter</a>
+                        </div>
+                        <div className="flex items-center">
+                            <FaLinkedin size={30} color="#0865fe" />
+                            <a className="ml-2 text-lg text-[#041893] font-semibold underline hover:cursor-pointer">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
                 {footerCols.map((section, index) => (
-                    <div className="flex flex-col mb-10 lg:mb-0" key={index}>
-                        <h1 className="text-xl lg:text-2xl font-semibold font-ptSans mb-4 lg:mb-10">{section.title}</h1>
+                    <div className="flex flex-col mb-6 lg:mb-0" key={index}>
+                        <h1 className="text-xl lg:text-2xl font-semibold mb-4">{section.title}</h1>
                         {section.items.map((item, idx) => (
                             <p className="text-md lg:text-lg my-1 font-medium" key={idx}>{item}</p>
                         ))}
                     </div>
                 ))}
             </div>
-            <div className="mx-6 lg:mx-24 mt-12 lg:mt-16 mb-12 flex flex-col lg:flex-row justify-between items-center">
-                <h2 className="text-gray-700 text-center lg:text-left text-md lg:text-xl">© Copyright 2024 KAAMBACK. All Rights Reserved.</h2>
-                <div className="flex flex-col lg:flex-row gap-y-4 lg:gap-y-0 gap-x-10 mt-6 lg:mt-0 items-center">
-                    <h2 className="text-xl lg:text-2xl font-bold text-gray-800">FOLLOW US</h2>
-                    <div className="flex flex-row gap-x-6">
-                        <FaInstagram size={30} />
-                        <FaRegEnvelope size={30} />
-                        <FaLinkedinIn size={30} />
-                        <FaTelegram size={30} />
-                    </div>
-                </div>
+            <div className="mt-6 lg:mt-16 w-full">
+                <p className="text-center text-md lg:text-lg font-semibold">&#169; KaamBack, 2024. <span className="text-[#827B5A]">All Rights Reserved.</span></p>
             </div>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

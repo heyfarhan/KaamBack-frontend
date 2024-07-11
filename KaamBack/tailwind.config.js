@@ -6,17 +6,17 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        custom: {
-          100: "#041893",
-          200: "#FDD513",
-          300: "#1F82E8",
-          400: "#D9D9D9",
-        },
-      },
       fontFamily: {
         'ptSans': ["PT Sans", "sans-serif"],
-      }
+      },
+      backgroundImage: {
+        'custom-image1': "url('./assets/tech.jpg')",
+        'custom-image2': "url('./assets/business.jpg')",
+        'custom-image3': "url('./assets/account.jpg')",
+        'custom-image4': "url('./assets/Engg.jpg')",
+        'custom-image5': "url('./assets/marketing.jpg')",
+        'homeBg': "url('./assets/Homebg.png')",
+      },
     },
   },
   plugins: [],

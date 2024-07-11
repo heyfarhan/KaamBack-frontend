@@ -1,14 +1,15 @@
-import About from "../components/About";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Team from "../components/Team";
 
 
 const Career = () => {
-   
+
   return (
     <div className="mx-auto bg-[#FFFDF3] w-full">
-    <About/>
-    <Team/>
+      <Navbar />
+      <Team />
+      <Footer />
     </div>
   )
 }
