@@ -1,6 +1,5 @@
 import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
-import profile from '../assets/profile.jpg';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
