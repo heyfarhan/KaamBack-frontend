@@ -3,6 +3,14 @@ import { FaXTwitter } from "react-icons/fa6";
 import profile from '../assets/profile.jpg';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+
+import member1 from '../assets/members/karthik.png'
+import member2 from '../assets/members/Farhan.png'
+import member3 from '../assets/members/kavya.png'
+import member4 from '../assets/members/nikita.png'
+import member5 from '../assets/members/shreya.png'
+import member6 from '../assets/members/aryaman.jpg'
+
 // @ts-ignore
 import { Splide, SplideSlide } from '@splidejs/react-splide'; // Default theme
 import '@splidejs/react-splide/css';
@@ -67,12 +75,12 @@ const OurTeam = () => {
     };
 
     const teamMembers = [
-        { name: 'Aryaman Sing', role: 'UI/UX Designer', image: profile },
-        { name: 'Aryaman Sinh', role: 'UI/UX Designer', image: profile },
-        { name: 'Aryaman Sigh', role: 'UI/UX Designer', image: profile },
-        { name: 'Aryaman Sngh', role: 'UI/UX Designer', image: profile },
-        { name: 'Aryaman ingh', role: 'UI/UX Designer', image: profile },
-        { name: 'Aryaman Singh', role: 'UI/UX Designer', image: profile },
+        { name: 'Karthik E', role: 'ReactJs Developer', image: member1 },
+        { name: 'Farhan Ahmed', role: 'Full stack developer', image: member2 },
+        { name: 'Kavya Jain', role: 'Data extraction', image: member3 },
+        { name: 'Nikita Motwani', role: 'Media and Marketing', image: member4 },
+        { name: 'Shreya Meher', role: 'Media and Marketing', image: member5 },
+        { name: 'Aryaman Singh', role: 'ReactJs Developer', image: member6 },
     ];
 
     const groupedTeamMembers = [];
