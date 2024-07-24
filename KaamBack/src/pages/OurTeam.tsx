@@ -1,9 +1,7 @@
 import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
-import profile from '../assets/profile.jpg';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-
 import member1 from '../assets/members/karthik.png'
 import member2 from '../assets/members/Farhan.png'
 import member3 from '../assets/members/kavya.png'
