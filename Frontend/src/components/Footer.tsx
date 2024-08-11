@@ -33,7 +33,7 @@ const footerCols = [
 const Footer = () => {
     const navigate = useNavigate();
 
-    const handleNavigation = (path) => {
+    const handleNavigation = (path:any) => {
         if (path === "/#about") {
             navigate("/", { replace: true });
             setTimeout(() => {

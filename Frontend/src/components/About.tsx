@@ -14,7 +14,7 @@ const About = () => {
   }, [controls, inView]);
 
   const textVariants = {
-    hidden: (direction) => ({
+    hidden: (direction:any) => ({
       opacity: 0,
       x: direction === 'left' ? -100 : 100,
     }),

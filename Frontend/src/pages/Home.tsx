@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import search from '../assets/search.png';
@@ -42,12 +42,7 @@ const Home = () => {
       controls3.start('visible');
     }
   }, [controls1, inView1, controls2, inView2, controls3, inView3]);
-
-  const variants = {
-    hidden: { opacity: 0, x: (custom) => (custom === 'left' ? -100 : 100) },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  };
-
+  
   return (
     <>
       <Navbar />
@@ -100,7 +95,6 @@ const Home = () => {
               ref={ref1}
               initial="hidden"
               animate={controls1}
-              variants={variants}
               custom="left"
               className='w-full lg:w-1/2 mb-6 lg:mb-0'
             >
@@ -111,7 +105,6 @@ const Home = () => {
               ref={ref1}
               initial="hidden"
               animate={controls1}
-              variants={variants}
               custom="right"
               className='w-full lg:w-1/2 flex justify-center lg:justify-end'
             >
@@ -123,7 +116,6 @@ const Home = () => {
               ref={ref2}
               initial="hidden"
               animate={controls2}
-              variants={variants}
               custom="right"
               className='w-full lg:w-1/2 flex justify-center lg:justify-start order-2 lg:order-1 mt-6 lg:mt-0'
             >
@@ -133,7 +125,6 @@ const Home = () => {
               ref={ref2}
               initial="hidden"
               animate={controls2}
-              variants={variants}
               custom="left"
               className='w-full lg:w-1/2 order-1 lg:order-2'
             >
@@ -146,7 +137,6 @@ const Home = () => {
               ref={ref3}
               initial="hidden"
               animate={controls3}
-              variants={variants}
               custom="left"
               className='w-full lg:w-1/2 mb-6 lg:mb-0'
             >
@@ -158,7 +148,6 @@ const Home = () => {
               ref={ref3}
               initial="hidden"
               animate={controls3}
-              variants={variants}
               custom="right"
               className='w-full lg:w-1/2 flex justify-center lg:justify-end'
             >
