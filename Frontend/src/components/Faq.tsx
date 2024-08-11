@@ -1,9 +1,14 @@
 import { useState, useRef, useEffect } from 'react';
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
-const Faq = ({ question, answer }) => {
+interface FaqProps {
+    question: string;
+    answer: string;
+}
+
+const Faq: React.FC<FaqProps> = ({ question, answer }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const contentRef = useRef(null);
+    const contentRef = useRef<HTMLDivElement>(null);
     const [height, setHeight] = useState(0);
 
     useEffect(() => {
