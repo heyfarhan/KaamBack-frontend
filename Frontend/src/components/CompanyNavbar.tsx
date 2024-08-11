@@ -66,7 +66,12 @@ const CompanyNavbar = () => {
             <div className={`lg:flex lg:flex-row lg:items-center lg:gap-x-[60px] ${isOpen ? 'block' : 'hidden'} absolute lg:relative top-20 lg:top-auto left-0 w-full lg:w-auto ${navBackground ? 'bg-[#FFFDF3]' : 'bg-custom-100'} lg:bg-transparent lg:static z-10`}>
                 <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-end gap-x-6">
                     {navLinks.map(link => (
-                        <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)}>
+                        <Link 
+                            key={link.path} 
+                            to={link.path} 
+                            onClick={() => setIsOpen(false)}
+                            className={`${activeLink === link.path ? 'text-blue-500' : ''}`}
+                        >
                             <img src={link.image} className={`${link.image === avatar ? 'rounded-full w-[32px] h-[32px]' : 'w-[22px] h-[22px]'}`} alt="" />
                         </Link>
                     ))}

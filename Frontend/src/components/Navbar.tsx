@@ -35,7 +35,7 @@ const Navbar = () => {
     { path: "/", label: "Home" },
     { path: "/career", label: "Career" },
     { path: "/ourteam", label: "Our Team" },
-   // { path: "/company-dashboard", label: "Company" },
+    { path: "/company-dashboard", label: "Company" },
   ];
 
   const showLogo1AndKaamback1 = location.pathname === "/";

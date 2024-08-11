@@ -7,7 +7,6 @@ import { BsEnvelopeFill } from "react-icons/bs";
 import { FaPhone } from "react-icons/fa";
 import { PiTelegramLogo } from "react-icons/pi";
 import { FaStar } from "react-icons/fa6";
-import { VscPreview } from "react-icons/vsc";
 import ReviewList from "../components/ReviewList";
 import { HiStar } from "react-icons/hi2";
 import { HiOutlineStar } from "react-icons/hi2";
