@@ -1,134 +1,82 @@
-import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
-import { FaXTwitter } from "react-icons/fa6";
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import member1 from '../assets/members/karthik.png'
-import member2 from '../assets/members/Farhan.png'
-import member3 from '../assets/members/kavya.png'
-import member4 from '../assets/members/nikita.png'
-import member5 from '../assets/members/shreya.png'
-import member6 from '../assets/members/aryaman.jpg'
+import member1 from '../assets/members/karthik.png';
+import member2 from '../assets/members/Farhan.png';
+import member3 from '../assets/members/kavya.png';
+import member4 from '../assets/members/nikita.png';
+import member5 from '../assets/members/shreya.png';
 
-// @ts-ignore
-import { Splide, SplideSlide } from '@splidejs/react-splide'; // Default theme
-import '@splidejs/react-splide/css';
-
-// or other themes
-import '@splidejs/react-splide/css/skyblue';
-import '@splidejs/react-splide/css/sea-green';
-
-// or only core styles
-import '@splidejs/react-splide/css/core';
+import back1 from '../assets/members/karthikBack.png';
+import back2 from '../assets/members/farhanBack.png';
+import back3 from '../assets/members/kavyaBack.png';
+import back4 from '../assets/members/nikitaBack.png';
+import back5 from '../assets/members/shreyaBack.png';
+import ourTeam from '../assets/ourTeam.png';
 
 type ProfileCardProps = {
-    name: string;
-    role: string;
-    image: string;
+    image1: string;
+    image2: string;
 };
 
-const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, image }) => (
-    <div className='group flex flex-col items-center shadow-xl lg:pb-6 pb-2 rounded-xl bg-white hover:bg-[#041893] hover:cursor-pointer transition-all duration-200 hover:text-white'>
-        <img src={image} alt='' className='lg:w-[250px] lg:h-[250px] w-[200px] h-[200px] rounded-tl-xl rounded-tr-xl rounded-b-none object-cover' />
-        <h2 className='text-xl font-bold text-[#181B38] lg:mt-6 mt-2 max-w-[180px] text-center group-hover:text-white'>{name}</h2>
-        <h2 className='font-bold text-[12px] text-[#181B38] group-hover:text-white'>{role}</h2>
-        <div className='flex flex-row items-center gap-x-4 mt-4'>
-            <FaLinkedinIn size={20} className='hover:cursor-pointer' />
-            <FaInstagram size={20} className='hover:cursor-pointer' />
-            <FaXTwitter size={20} className='hover:cursor-pointer' />
+const ProfileCard: React.FC<ProfileCardProps> = ({ image1, image2 }) => (
+    <div className="group h-80 w-72 lg:w-80 [perspective:1000px]">
+        <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            {/* Front Side */}
+            <div className="absolute inset-0 h-full w-full [backface-visibility:hidden]">
+                <div className='flex flex-col items-center h-full rounded-3xl'>
+                    <img src={image1} alt='profile' className='w-full h-full object-cover object-top' />
+                </div>
+            </div>
+            {/* Back Side */}
+            <div className="absolute inset-0 h-full w-full bg-[#041893] rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex items-center justify-center">
+                <div className='flex flex-col items-center h-full rounded-3xl'>
+                    <img src={image2} alt='profile' className='w-full h-full object-cover object-top' />
+                </div>
+            </div>
         </div>
     </div>
 );
 
 const OurTeam = () => {
-    const splideOptions: any = {
-        rewind: true,
-        autoplay: true,
-        interval: 3000,
-        width: '100%',
-        gap: '1rem',
-        padding: { left: '5%', right: '5%' },
-        perPage: 1,
-        breakpoints: {
-            640: {
-                perPage: 1,
-                gap: '1rem',
-                padding: { left: '5%', right: '5%' },
-            },
-            768: {
-                perPage: 1,
-                gap: '1.5rem',
-                padding: { left: '10%', right: '10%' },
-            },
-            1024: {
-                perPage: 1,
-                gap: '2rem',
-                padding: { left: '10%', right: '10%' },
-            },
-            1280: {
-                perPage: 1,
-                gap: '2rem',
-                padding: { left: '5%', right: '10%' },
-            },
-        }
-    };
-
     const teamMembers = [
-        { name: 'Karthik E', role: 'ReactJs Developer', image: member1 },
-        { name: 'Farhan Ahmed', role: 'Full stack developer', image: member2 },
-        { name: 'Kavya Jain', role: 'Data extraction', image: member3 },
-        { name: 'Nikita Motwani', role: 'Media and Marketing', image: member4 },
-        { name: 'Shreya Meher', role: 'Media and Marketing', image: member5 },
-        { name: 'Aryaman Singh', role: 'ReactJs Developer', image: member6 },
+        { image1: member1, image2: back1 },
+        { image1: member2, image2: back2 },
+        { image1: member3, image2: back3 },
+        { image1: member4, image2: back4 },
+        { image1: member5, image2: back5 },
     ];
 
-    const groupedTeamMembers = [];
-    for (let i = 0; i < teamMembers.length; i += 3) {
-        groupedTeamMembers.push(teamMembers.slice(i, i + 3));
-    }
-
     return (
-        <>
+        <div className='flex flex-col'>
             <Navbar />
-            <div className="bg-blue-100 px-4 lg:px-24 lg:py-12 py-8 lg:mt-[100px] mt-[60px]">
-                <div className="flex flex-row h-24 items-center">
-                    <div className="w-[6px] bg-[#181B38] h-20 mr-4 hidden lg:block"></div>
-                    <h1 className="text-4xl md:text-5xl font-bold text-[#181B38]">OUR TEAM
-                        <span className="block text-sm md:text-lg tracking-wider mt-2 ml-1">Meet our team members</span>
-                    </h1>
+            <div className='flex flex-col lg:flex-row mt-20 lg:mt-40 px-6 lg:px-24 items-center'>
+                <div className='flex flex-col w-full lg:w-1/2 lg:pr-10 mb-4 lg:mb-0'>
+                    <h1 className='text-[36px] lg:text-[50px] font-ptSans font-bold mb-8 lg:mb-12 mt-10'>Who we are?</h1>
+                    <p className='text-base lg:text-lg font-normal tracking-wide'>
+                        At <span className='text-gray-700 font-bold'>Kaamback</span>, we're more than just an agency; we're your dedicated allies in the journey of business success. Founded by a team of passionate entrepreneurs and industry experts, our mission is clear: to help small businesses thrive and flourish in the digital age.
+                    </p>
                 </div>
-                <div className='flex items-center'>
-                    <Splide options={splideOptions}>
-                        {groupedTeamMembers.map((group, index) => (
-                            <SplideSlide key={index}>
-                                <div className='flex justify-center gap-x-20 flex-wrap mb-10 gap-y-10'>
-                                    {group.map((member, idx) => (
-                                        <ProfileCard
-                                            key={idx}
-                                            name={member.name}
-                                            role={member.role}
-                                            image={member.image}
-                                        />
-                                    ))}
-                                </div>
-                            </SplideSlide>
-                        ))}
-                    </Splide>
+                <div className='w-full lg:w-1/2'>
+                    <img src={ourTeam} alt='Who we are' className='w-full h-auto' />
+                </div>
+            </div>
+            <div className="bg-white px-4 lg:px-24 mt-10 lg:mt-[100px]">
+                <div className="flex flex-row h-24 items-center">
+                    <div className="w-[6px] bg-[#181B38] h-20 mr-4"></div>
+                    <h1 className="text-[36px] lg:text-[50px] font-bold text-[#181B38] leading-10">Meet our team members</h1>
+                </div>
+                <div className='flex items-center flex-wrap justify-center gap-8 lg:gap-x-48 gap-y-20 mt-12'>
+                    {teamMembers.map((member, index) => (
+                        <ProfileCard
+                            key={index}
+                            image1={member.image1}
+                            image2={member.image2}
+                        />
+                    ))}
                 </div>
             </div>
             <Footer />
-
-            <style>{`
-        .splide__arrow{
-          opacity:1; color: red;
-        }
-        .splide__pagination__page.is-active{
-          background-color: #041893; border-radius: 50%; width: 5px; height: 5px;
-        }
-        .splide__pagination__page{
-          background-color: ##BFE0FF; border-radius: 50%; width: 6px; height: 6px;
-        }
-      `}</style>
-        </>
+        </div>
     );
 };
 
