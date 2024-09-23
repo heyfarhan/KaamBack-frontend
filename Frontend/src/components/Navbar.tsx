@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import logo1 from '../assets/logoLight.png';
 import Kaamback1 from '../assets/KaamBack (1).png';
 import Kaamback2 from '../assets/KaamBack (2).png';
+import kaamback from '../assets/kaamback.png';  // Import kaamback image here
 import logo2 from '../assets/logoBlue.png';
 
 const Navbar = () => {
@@ -50,10 +51,14 @@ const Navbar = () => {
         </button>
         <div className='flex flex-col items-center'>
           <div className='flex flex-row items-center'>
+            {/* Showing logo and Kaamback based on routes */}
             {showLogo1AndKaamback1 && <img src={logo1} alt="Logo" className="w-[30px] lg:w-[50px] h-auto" />}
             {showLogo2AndKaamback2 && <img src={logo2} alt="Logo" className="w-[30px] lg:w-[50px] h-auto" />}
             {showLogo1AndKaamback1 && <img src={Kaamback1} alt="KaamBack" className="ml-2 h-[40px]" />}
             {showLogo2AndKaamback2 && <img src={Kaamback2} alt="KaamBack" className="ml-2 h-[40px]" />}
+            
+            {/* Adding the 'kaamback.png' image */}
+            <img src={kaamback} alt="Kaamback" className="ml-2 h-[55px]" />  {/* Added the kaamback image */}
           </div>
           <div className='h-[3px] w-full bg-[#F8D328] mt-2 mb-1'></div>
           <p className={`text-sm tracking-widest font-ptSans ${isHomePage ? 'text-white' : 'text-[#041893]'}`}>

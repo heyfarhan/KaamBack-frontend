@@ -6,6 +6,7 @@ import img3 from '../assets/careerLocation.png';
 import img4 from '../assets/careerWorkers.png';
 import img5 from '../assets/careerEducation.png';
 import img6 from '../assets/careerAward.png';
+import { Link } from 'react-router-dom';
 
 const Career = () => {
   return (
@@ -19,9 +20,11 @@ const Career = () => {
           <p className='font-normal tracking-wide text-base lg:text-lg'>
             Work at the most dynamic and successful agency! At Kaamback, we are dedicated to delivering top-notch digital solutions to a diverse range of clients by blending creativity with functionality.
           </p>
-          <button className="px-6 py-4 bg-gradient-to-r from-[#0177ED] to-[#5DC2EA] w-48 lg:w-60 rounded-full text-lg lg:text-xl text-white font-semibold mt-8 lg:mt-16">
-            View Openings
-          </button>
+          <Link to="/openings">
+            <button className="px-6 py-4 bg-gradient-to-r from-[#0177ED] to-[#5DC2EA] w-48 lg:w-60 rounded-full text-lg lg:text-xl text-white font-semibold mt-8 lg:mt-16">
+              View Openings
+            </button>
+          </Link>
         </div>
         <div className='w-full lg:w-[40%] flex justify-center items-center mt-8 lg:mt-0'>
           <img src={img1} alt='Join our team' className="w-full h-auto" />
