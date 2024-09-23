@@ -1,81 +1,117 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import logo1 from '../assets/logoLight.png';
-import Kaamback1 from '../assets/KaamBack (1).png';
-import Kaamback2 from '../assets/KaamBack (2).png';
-import logo2 from '../assets/logoBlue.png';
+import { useState, useContext } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { AuthContext } from "../context/AuthContext";
+import logoLight from "../assets/logoLight.png";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [navBackground, setNavBackground] = useState(false);
+function Navbar() {
+  const [open, setOpen] = useState(false);
   const location = useLocation();
-  const [activeLink, setActiveLink] = useState('/');
+  const { user, logout } = useContext(AuthContext);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setNavBackground(true);
-      } else {
-        setNavBackground(false);
-      }
-    };
+  const getLinkClass = (path: string) => {
+    const isActive = location.pathname === path;
+    return isActive ? "underline" : "hover:underline focus:underline";
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const textColor =
+    location.pathname === "/" ? "text-white" : "md:text-[#041893] text-white";
+  const bgColor =
+    location.pathname === "/"
+      ? ""
+      : "md:bg-[#041893] md:text-white text-[#041893] bg-white";
 
-  useEffect(() => {
-    setActiveLink(location.pathname);
-  }, [location.pathname]);
-
-  const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/career", label: "Career" },
-    { path: "/ourteam", label: "Our Team" },
-    { path: "/company-dashboard", label: "Company" },
-  ];
-
-  const showLogo1AndKaamback1 = location.pathname === "/";
-  const showLogo2AndKaamback2 = location.pathname === "/career" || location.pathname === "/ourteam";
-  const isHomePage = location.pathname === "/";
+  const handleLogout = () => {
+    logout();
+  };
 
   return (
-    <nav className='absolute top-0 left-0 w-full flex items-center lg:justify-between px-6 lg:px-16 lg:py-6 py-2 transition-all duration-300 z-50 bg-transparent'>
-      <div className="flex items-center lg:justify-between w-full lg:w-auto">
-        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden mr-4">
-          {isOpen ? <FaTimes size={28} className={`${isHomePage ? 'text-white' : 'text-[#041893]'}`} /> : <FaBars size={28} className={`${isHomePage ? 'text-white' : 'text-[#041893]'}`} />}
-        </button>
-        <div className='flex flex-col items-center'>
-          <div className='flex flex-row items-center'>
-            {showLogo1AndKaamback1 && <img src={logo1} alt="Logo" className="w-[30px] lg:w-[50px] h-auto" />}
-            {showLogo2AndKaamback2 && <img src={logo2} alt="Logo" className="w-[30px] lg:w-[50px] h-auto" />}
-            {showLogo1AndKaamback1 && <img src={Kaamback1} alt="KaamBack" className="ml-2 h-[40px]" />}
-            {showLogo2AndKaamback2 && <img src={Kaamback2} alt="KaamBack" className="ml-2 h-[40px]" />}
-          </div>
-          <div className='h-[3px] w-full bg-[#F8D328] mt-2 mb-1'></div>
-          <p className={`text-sm tracking-widest font-ptSans ${isHomePage ? 'text-white' : 'text-[#041893]'}`}>
-            "Where Experience meets Opportunity"
-          </p>
+    <div className="absolute w-full z-10 top-0 left-0">
+      <div className="md:flex items-center justify-between md:bg-transparent bg-[#041893] py-3 md:px-10 px-7">
+        <div className="font-bold text-2xl cursor-pointer flex items-center font-Oxanium text-gray-800">
+          <NavLink
+            to="/"
+            className={`text-white flex items-center gap-1 ${textColor}`}
+          >
+            <img src={logoLight} alt="logo" className="h-7" /> Kaamback
+          </NavLink>
         </div>
-      </div>
-      <div className={`lg:flex lg:flex-row lg:items-center lg:gap-x-[60px] ${isOpen ? 'max-h-screen' : 'max-h-0'} overflow-hidden lg:max-h-none transition-max-height duration-300 ease-in-out absolute lg:relative top-14 lg:top-auto left-0 w-full lg:w-auto ${navBackground ? 'bg-white' : 'bg-[#041893]'} lg:bg-transparent lg:static z-10`}>
-        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-end">
-          {navLinks.map(link => (
-            <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)}>
-              <p className={`font-medium text-[22px] font-ptSans py-2 lg:py-0 px-6 ${activeLink === link.path && isHomePage ? 'text-[#041893] underline' : activeLink === link.path ? 'text-[#041893] underline' : 'text-[#041893] hover:underline'} ${isHomePage ? 'text-[#fafcfd]' : 'text-[#041893]'}`}>
-                {link.label}
-              </p>
-            </Link>
-          ))}
-          <button className={`w-[90px] rounded-full py-1 mt-2 lg:mt-0 mb-4 lg:mb-0 lg:ml-[20px] flex justify-center ${isHomePage ? 'bg-white' : 'bg-[#041893]'}`}>
-            <p className={`text-[22px] font-ptSans font-semibold ${isHomePage ? 'text-[#041893]' : 'text-white'}`}>Log in</p>
-          </button>
+
+        <div
+          onClick={() => setOpen(!open)}
+          className="text-3xl text-white absolute right-8 top-2.5 cursor-pointer md:hidden"
+        >
+          {open ? <FaTimes /> : <FaBars />}
         </div>
+
+        <ul
+          className={`flex flex-col items-center md:flex md:flex-row md:items-center  md:pb-0  ${textColor} pb-4 absolute md:static md:bg-transparent bg-[#041893] md:z-auto z-[-10] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-200 ease-in pt-3 md:pt-0 ${
+            open ? "top-[56px]" : "top-[-150px]"
+          }`}
+        >
+          <li className="font-semibold p-1 md:p-1 pl-2 mr-7 rounded-sm">
+            <NavLink to="/" className={getLinkClass("/")}>
+              Home
+            </NavLink>
+          </li>
+          <li className="font-semibold p-1 pl-2 md:p-1 mr-7 rounded-sm">
+            <NavLink to="/career" className={getLinkClass("/career")}>
+              Career
+            </NavLink>
+          </li>
+          <li className="font-semibold p-1 pl-2 md:p-1 mr-7 rounded-sm">
+            <NavLink to="/ourteam" className={getLinkClass("/ourteam")}>
+              Our Team
+            </NavLink>
+          </li>
+          <li className="font-semibold p-1 pl-2 md:p-1 mr-7 rounded-sm">
+            <NavLink
+              to="/company-dashboard"
+              className={getLinkClass("/company-dashboard")}
+            >
+              Company
+            </NavLink>
+          </li>
+
+          {user ? (
+            // If the user is logged in, show Logout and Profile
+            <>
+              <li className="font-semibold flex gap-2 items-center">
+                <span className={`font-semibold  mt-2 px-3 py-1 md:mt-0 rounded-full capitalize ${bgColor}`}>
+                  Hi, {user?.user?.name}
+                  {console.log(user)}
+                </span>
+                <button
+                  onClick={handleLogout}
+                  className={`font-semibold mr-4 mt-2 px-3 py-1 md:mt-0 rounded-full capitalize ${bgColor} hover:underline`}
+                >
+                  Logout
+                </button>
+              </li>
+            </>
+          ) : (
+            // If the user is not logged in, show Login and Signup options
+            <>
+              <>
+                <div
+                  className={`font-semibold mr-4 mt-2 md:mt-0 rounded-full ${bgColor}`}
+                >
+                  <li className="font-semibold py-2 px-3 text-center cursor-pointer">
+                    <NavLink to="/login" className="mr-2 hover:underline ">
+                      Login
+                    </NavLink>
+                    <span>/</span>
+                    <NavLink to="/signup" className="ml-2 hover:underline ">
+                      SignUp
+                    </NavLink>
+                  </li>
+                </div>
+              </>
+            </>
+          )}
+        </ul>
       </div>
-    </nav>
+    </div>
   );
 }
 
