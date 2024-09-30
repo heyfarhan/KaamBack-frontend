@@ -58,7 +58,7 @@ const HeroSection: React.FC = () => {
               className="w-full mb-4 text-center border-b border-gray-400 focus:outline-none focus:border-blue-500" 
               style={{ border: 'none', borderBottom: '2px solid gray' }}  // Just a bottom line
             />
-            <select 
+            {/* <select 
               className="w-full mb-4 text-center border-b border-gray-400 focus:outline-none focus:border-blue-500"
               style={{ border: 'none', borderBottom: '2px solid gray' }}  // Just a bottom line
             >
@@ -66,7 +66,7 @@ const HeroSection: React.FC = () => {
               <option>Frontend Developer</option>
               <option>Backend Developer</option>
               <option>Fullstack Developer</option>
-            </select>
+            </select> */}
             <p className="text-sm text-gray-400 mb-6">
               By submitting, you acknowledge and agree to Kaamback’s terms and conditions and Privacy Policy.
             </p>
@@ -86,7 +86,7 @@ const HeroSection: React.FC = () => {
               className="w-full mb-4 text-center border-b border-gray-400 focus:outline-none focus:border-blue-500"
               style={{ border: 'none', borderBottom: '2px solid gray' }}  // Just a bottom line
             />
-            <select 
+            {/* <select 
               className="w-full mb-4 text-center border-b border-gray-400 focus:outline-none focus:border-blue-500"
               style={{ border: 'none', borderBottom: '2px solid gray' }}  // Just a bottom line
             >
@@ -94,7 +94,7 @@ const HeroSection: React.FC = () => {
               <option>HR Manager</option>
               <option>Recruitment Consultant</option>
               <option>Talent Acquisition</option>
-            </select>
+            </select> */}
             <p className="text-sm text-gray-400 mb-6">
               By submitting, you acknowledge and agree to Kaamback’s terms and conditions and Privacy Policy.
             </p>

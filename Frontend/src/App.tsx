@@ -11,6 +11,7 @@ import EditProfile from './pages/CompanyProfile';
 import CompanySearch from './pages/CompanySearch';
 import CompanySettings from './pages/CompanySettings';
 import Logout from './pages/Logout';
+import Messages from './pages/Messages';
 
 const Home = lazy(() => import('./pages/Home'))
 const Career = lazy(() => import('./pages/Career'))
@@ -33,7 +34,6 @@ function App() {
           <Route path="/company-dashboard" element={<CompanyDashboard />} />
           <Route path="/company-dashboard/your-hires" element={<YourHires />} />
           <Route path="/company-dashboard/your-projects" element={<YourProjects />} />
-          {/* <Route path="/company-dashboard/profile" element={<Profile />} /> */}
           <Route path="/openings" element={<Openings/>} />
           <Route path="/application" element={<ApplicationForm/>}/>
           <Route path="/submitted" element={<ApplicationSubmission/>}/>
@@ -44,6 +44,8 @@ function App() {
           <Route path="/search" element={<CompanySearch/>} />
           <Route path="/settings" element={<CompanySettings/>} />
           <Route path="/logout" element={<Logout/>} />
+          <Route path="/messages" element={<Messages/>} />
+          
 
 
 
